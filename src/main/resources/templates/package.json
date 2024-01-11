@@ -1,0 +1,47 @@
+{
+  "flowId":"leaveApplication",
+  "flowName":"请假申请",
+  "nodeList": [
+    {
+      "id":"start",
+      "nodeType": "START",
+      "name":"开始",
+      "nextNodeId": "initiateApplication"
+    },
+    {
+      "id":"initiateApplication",
+      "nodeType": "TASK",
+      "name":"提出申请",
+      "performType":"ANY",
+      "nextNodeId": "firstReview",
+      "ext":{
+        "userIds":"张三"
+      }
+    },
+    {
+      "id":"firstReview",
+      "nodeType": "TASK",
+      "name":"第一次审批",
+      "performType":"ANY",
+      "nextNodeId": "secondReview",
+      "ext":{
+        "userIds":"主管"
+      }
+    },
+    {
+      "id":"secondReview",
+      "nodeType": "TASK",
+      "name":"第二次审批",
+      "performType":"ANY",
+      "nextNodeId": "end",
+      "ext":{
+        "userIds":"主任"
+      }
+    },
+    {
+      "id":"end",
+      "nodeType": "END",
+      "name":"结束"
+    }
+  ]
+}
